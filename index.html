@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi"/>
+
+    <script type="text/javascript" charset="utf-8">
+
+    </script>
+
+    <!-- STYLESHEET INCLUDES -->
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/searchField.css"/>
+    <link rel="stylesheet" type="text/css" href="css/searchResult.css"/>
+    <link rel="stylesheet" type="text/css" href="css/brregList.css"/>
+
+    <link rel="stylesheet" type="text/css" href="css/splashScreen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mainScreen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/settingsScreen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/infoScreens.css"/>
+    <link rel="stylesheet" type="text/css" href="css/searchScreen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/advancedSearchScreen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detailsScreen.css"/>
+
+
+    <!-- JAVASCRIPT INCLUDES Development -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- JAVASCRIPT ICLUDES Deployment on build.phonegap.com-->
+    <!--<script src="phonegap.js"></script>-->
+    <script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script>
+
+    <script type="text/javascript" src="Visma/Init.js"></script>
+
+    <script type="text/javascript" src="Visma/Dictionary/nbNO.js"></script>
+    <script type="text/javascript" src="Visma/Dictionary/enGB.js"></script>
+    <script type="text/javascript" src="Visma/Lookup/HTTPRequest.js"></script>
+
+    <script type="text/javascript" src="Visma/Core/Globals.js"></script>
+    <script type="text/javascript" src="Visma/Core/Localization.js"></script>
+    <script type="text/javascript" src="Visma/Core/ScreenManager.js"></script>
+    <script type="text/javascript" src="Visma/Core/LocalStorageManager.js"></script>
+    <script type="text/javascript" src="Visma/Core/Statistics.js"></script>
+    <script type="text/javascript" src="Visma/Core/Favourites.js"></script>
+
+    <script type="text/javascript" src="Visma/Lookup/Search.js"></script>
+    <script type="text/javascript" src="Visma/Lookup/SearchResult.js"></script>
+    <script type="text/javascript" src="Visma/Lookup/SearchInput.js"></script>
+    <script type="text/javascript" src="Visma/Lookup/FavouritesLookup.js"></script>
+    <script type="text/javascript" src="Visma/Lookup/BrregResult.js"></script>
+
+    <script type="text/javascript" src="Visma/Integration/BrregData.js"></script>
+    <script type="text/javascript" src="Visma/Integration/BrregFactory.js"></script>
+    <script type="text/javascript" src="Visma/Integration/Norid.js"></script>
+
+    <script type="text/javascript" src="Visma/Screens/MainScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/SettingsScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/SplashScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/DetailsScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/SearchScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/InformationScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/AboutTrademarkScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/AboutNIPOScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/AboutNIPOScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/ContactInfoScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/FavouritesScreen.js"></script>
+    <script type="text/javascript" src="Visma/Screens/BrregScreen.js"></script>
+
+    <script type="text/javascript" src="Visma/Tabs/SearchOrderTab.js"></script>
+    <script type="text/javascript" src="Visma/Tabs/SearchAdvancedTab.js"></script>
+
+
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div data-role="page" class="page" id="splashScreen">
+    <img id="splashImage" src="img/logoPatentstyret.png" />
+    <br /><br />
+    <img id="splashSpinner" src="img/spinner32.gif" />
+</div>
+
+<!-- MAIN SCREEN -->
+<div data-role="page" class="page" id="mainScreen">
+    <div class="centerContent">
+
+        <img id="settingsButtonMainScreen" src="img/icons/settings.png" />
+
+        <div id="bannerContainer">
+            <img id="mainScreenLogo" src="img/logoPatentstyret.png" />
+        </div>
+
+        <form id="searchFormMain">
+            <div id="searchFieldContainerMain" class="searchFieldContainer">
+                <input id="searchFieldMain" class="searchField" type="text" value="Varemerke, foretak, domene" />
+                <a href="#">
+                    <img src="img/icons/search.png" type="submit" id="searchButtonMain" class="searchButton" />
+                </a>
+                <input id="hiddenSubmitButton" class="hiddenSubmitButton" type="submit" />
+            </div>
+        </form>
+
+        <div class="optionsMainScreen">
+            <img class="mainScreenIcon" id="advancedSearchMainScreen" src="img/icons/advanced_search.png" />
+            <img class="mainScreenIcon" id="informationMainScreen" src="img/icons/info.png" />
+            <img class="mainScreenIcon" id="favouritesMainScreen" src="img/icons/favourites.png" />
+        </div>
+    </div>
+
+    <!-- NEWSFEED -->
+        <div id="newsHeadline" class="titleText">Nyhetsfeed</div>
+        <div id="newsfeed"></div>
+
+</div>
+
+<!-- SEARCH RESULTS PAGE -->
+<div data-role="page" class="page" id="searchResults">
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="searchHeaderResults">Søk</div>
+        <div class="navBackButton" id="backResults">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div><br />
+        <div id="staticSearchBar">
+            <form id="searchForm">
+                <div id="searchFieldContainer" class="searchFieldContainer">
+                    <input id="searchField" class="searchField" type="text" value="Tekst i merket"/>
+                    <a href="#">
+                        <img src="img/icons/search.png" class="searchButton" id="searchButton"/>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="pageContent">
+        <div id="searchMetaBar">
+            <div id="sortAndAdvancedContainer">
+                <div id="searchOrderTab" class="searchTab">Sorter</div>
+                <div id="searchAdvancedTab" class="searchTab searchTabDivider">Avansert søk</div>
+
+                <div class="clear"></div>
+
+                <!-- SORT FIELD -->
+                <div id="searchTabOrderExpander" class="searchTabExpander">
+                    <div class="textList">
+                        <div id="sortBy" class="sortFieldTextLabel">Sorter etter</div>
+                        <select id="sortSearchFieldSelect" class="dropdownSearchFieldSelect">
+                            <option value="date" id="date">Dato</option>
+                            <option value="status" id="status">Status</option>
+                            <option value="trademarkText" id="title">Merketekst</option>
+                            <option value="applicant" id="applicant">Søker</option>
+                        </select>
+                    </div>
+
+                    <div id="sortByContainer" class="textList clear">
+
+                        <div id="sortAscending" class="sortBySelector">Stigende</div>
+                        <div id="sortDescending" class="sortBySelector sortBySelectorSelected">Synkende</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <!-- ADVANCED SEARCH FIELD -->
+                <div id="searchTabAdvancedExpander" class="searchTabExpander">
+                    <form id="advancedSearchForm">
+                        <div class="advancedSearchScreen">
+                            <div class="advancedSearchAttributeLine">
+                                <div class ="advancedSearchTextLabel" id="freeTextSearch">Fritekst:</div>
+
+                                <input type="text" class="inputFieldContainer advancedSearchFieldText" id="searchFieldFreeText" />
+
+                            </div>
+
+                            <br class="clear" />
+
+                            <div class="advancedSearchAttributeLine">
+                                <div class ="advancedSearchTextLabel" id="owner"> Søker/innehaver:</div>
+                                <input type="text" class="inputFieldContainer advancedSearchFieldText" id="searchFieldOwner" />
+                            </div>
+
+                            <br class="clear" />
+
+                            <div class="advancedSearchAttributeLine">
+                                <div id="status">
+                                    <div class ="advancedSearchTextLabel" id="applicationStatus">Status:</div>
+                                    <!--<div class="styleSelectedDropDown">-->
+                                    <div class="">
+                                        <!--<select class="inputFieldContainer dropdownSearchFieldSelect" id="applicationStatusSelect">-->
+                                        <select class="dropdownSearchFieldSelect" id="applicationStatusSelect">
+                                            <option value="1" id="chooseLegalStatus">Velg status</option>
+                                            <option value="49" id="cancelled">Registrering opphevet</option>
+                                            <option value="51" id="granted">Besluttet gjeldende</option>
+                                            <option value="100" id="ceased">Registrering opphørt</option>
+                                            <option value="30" id="refused">Avslått</option>
+                                            <option value="10" id="pending">Under behandling</option>
+                                            <option value="12" id="annulment">Annullert</option>
+                                            <option value="35" id="shelved">Henlagt (kan gjenopptas)</option>
+                                            <option value="40" id="withdrawn">Trukket</option>
+                                            <option value="47" id="finallyShelved">Endelig henlagt</option>
+                                            <option value="50" id="registered">Registrert</option>
+                                        </select>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advancedSearchAttributeLine">
+                                <div id="applicationFiled">Søknad inngitt:</div>
+
+                                <div class="fromDate">
+                                    <div class="advancedSearchFieldDateLable" id="fromDate">Fra dato</div>
+                                    <input class="inputFieldContainer advancedSearchFieldDate" type="date" id="datepickerFrom" />
+                                </div>
+
+                                <div class="toDate">
+                                    <div class="advancedSearchFieldDateLable" id="toDate">Til dato</div>
+                                    <input class="inputFieldContainer advancedSearchFieldDate" type="date" id="datepickerTo" />
+                                </div>
+                            </div>
+                        <input type="submit" style="visibility: hidden;" />
+                        </div>
+                    </form>
+                <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="errorDateMessage" class="errorMessage"></div>
+    <div id="errorEmptyText" class="normalText centerContent"></div>
+    <div id="searchResultsList" class="normalText">
+
+    </div>
+    <div id="searchSpinner" class="spacerTop">
+        <img id="spinnerImage" src="img/spinner32.gif" align="middle" />
+    </div>
+    <div id="errorMessageSearchResult" class="errorMessage"></div>
+    <div class="bottomNavigationBar">
+
+    </div>
+
+    <!-- Number of results Bar-->
+    <div id="searchNumberOfHits" class="normalText italicText centerContent"> </div>
+    <!-- Further actions container showing BRREG and NORID results-->
+    <div id="otherServicesSearchResults" class="clear">
+        <div id="brregSearchResult" class="clickButton">
+        </div>
+        <div id="noridSearchResult" class="clickButton">
+        </div>
+        <div id="emptyTradeMarkResultButton" class="clickButton">
+        </div>
+        &nbsp;
+        <div class="clear"></div>
+    </div>
+  <div class="clear"></div>
+</div>
+
+
+<!-- INFORMATION PAGE -->
+<div data-role="page" class="page" id="informationScreen">
+
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="informationHeaderTitle">Informasjon</div>
+        <div class="navBackButton" id="backToMain">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+    </div>
+
+    <div class="pageContent">
+        <div class="clear"></div>
+        <br/>
+        <div class="clickButton externalLink" id="efiling"><img src="img/icons/arrow_right_blue.png" class="leftArrow" /><div id="efilingText" class="buttonWithArrowText">Søk beskyttelse</div></div>
+        <br/>
+        <div class="clickButton externalLink" id="preliminarySearchService"><img src="img/icons/arrow_right_blue.png" class="leftArrow" /><div id="preliminarySearchServiceText" class="buttonWithArrowText">Om varemerker</div></div>
+        <br/>
+        <div class="clickButton externalLink" id="training"><img src="img/icons/arrow_right_blue.png" class="leftArrow" /><div id="trainingText" class="buttonWithArrowText">Spør ekspertene</div></div>
+        <br/>
+        <div class="clickButton externalLink" id="TMview"><img src="img/icons/arrow_right_blue.png" class="leftArrow" /><div id="TMviewText" class="buttonWithArrowText">TMview</div></div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="clickButton buttonWithArrow" id="aboutPS"><div id="aboutPSText" class="whiteLink buttonWithArrowText">Om Patentstyret</div><img src="img/icons/arrow_right_gray.png" class="rightArrow" /></div>
+        <br/>
+        <div class="clickButton buttonWithArrow" id="contactUs"><div id="contactUsText" class="whiteLink buttonWithArrowText">Kontaktinformasjon</div><img src="img/icons/arrow_right_gray.png" class="rightArrow" /></div>
+
+
+        <div class="subtitleText" id="socialText">Patentstyret i sosiale medier</div>
+        <div id="socialButtons">
+            <div class="clear"></div>
+            <img class="mainScreenIcon" id="facebook" src="img/icons/facebookIcon.png" />
+            <img class="mainScreenIcon" id="twitter" src="img/icons/twitterIcon.png" />
+            <img class="mainScreenIcon" id="youTube" src="img/icons/youTubeIcon.png" />
+        </div>
+
+        <br/>
+        <br/>
+        <div class="italicText metaText" id="DevelopedByText">ggg</div>
+
+        <div class="centerContent">
+            <img id="developedByLogo" src="img/visma_logo.png" />
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT PATENTSTYRET PAGE -->
+<div data-role="page" class="page" id="aboutScreen">
+
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="aboutPatentstyretHeaderTitle">Om Patentstyret</div>
+        <div class="navBackButton" id="backToInformationScreenFromAbout">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+    </div>
+
+    <div class="pageContent normalText">
+
+        <div class="textInformationContainer" id="aboutPatentstyretContainer"></div>
+    </div>
+</div>
+
+<!-- CONTACT INFO PAGE -->
+<div data-role="page" class="page" id="contactInfoScreen">
+
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="contactInfoHeaderTitle">Om Patentstyret</div>
+        <div class="navBackButton" id="backButtonContactInfo">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+    </div>
+
+    <div class="pageContent normalText">
+
+    </div>
+</div>
+
+
+
+<!-- FAVOURITES PAGE -->
+<div data-role="page" class="page" id="favourites">
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="favouritesHeaderTitle">Favoritter</div>
+        <div class="navBackButton" id="favouritesBackButton">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+    </div>
+
+    <div class="pageContent normalText" id="favouritesPageContent">
+
+    </div>
+    <div id="serverError" class="errorMessage centerContent"></div>
+    <div id="noFavoritesFound" class="normalText centerContent"></div>
+</div>
+
+
+<!-- DETAILS SCREEN -->
+<div data-role="page" class="page" id="detailsScreen">
+     <div class="navBar navTitleText">
+         <div class="navTitle" id="detailsHeaderTitle">Detaljer</div>
+         <div class="navBackButton" id="backDetails">
+             <div class="navBackArrow"><img src="img/back_button.png" /></div>
+         </div>
+         <div id="navBarRightImageContainer"><img id="navBarRightImage" src="img/icons/fav_deselected.png" /></div>
+     </div>
+
+     <div class="pageContent normalText">
+         <div id="detailsContainer"></div>
+
+
+         <div id="detailsExpander"></div>
+
+         <div id="detailsReadMore">
+             <img class="expandIcon" src="img/icons/arrow_down.png" />
+         </div>
+     </div>
+    <div id="errorMessageDetails" class="errorMessage"></div>
+</div>
+
+
+
+<!-- BRREG Page -->
+<div data-role="page" class="page" id="brreglist">
+    <div class="navBar navTitleText">
+        <div class="navTitle" id="brregHeaderTitle">Brreg.no</div>
+        <div class="navBackButton" id="brregBackButton">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+    </div>
+
+    <div class="pageContent" id="brregPageContent">
+    </div>
+</div>
+
+<!-- SETTINGS PAGE -->
+<div data-role="page" class="page" id="settingsScreen">
+    <div class="navBar navTitleText">
+        <div class="navTitle " id="titleSettingsScreen">Innstillinger</div>
+        <div class="navBackButton" id="backToMainFromSettingsLink">
+            <div class="navBackArrow"><img src="img/back_button.png" /></div>
+        </div>
+
+    </div>
+    <div class="pageContent" >
+        <form id="selectLanguageForm">
+            <label id="selectLanguage" class="subtitleText">Språk</label>
+            <select id="dropdownBoxLanguageSelect">
+                <option value="nb-NO">Norsk</option>
+                <option value="en-GB">English</option>
+            </select>
+        </form>
+        <div class="clickButton" id="saveAndBackToMainFromSettingsLink">Lagre</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var app = new Visma.App();
+    app.initialize();
+
+</script>
+</body>
+</html>

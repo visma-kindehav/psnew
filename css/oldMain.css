@@ -1,0 +1,614 @@
+#splashScreen
+{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#splashImage
+{
+    margin-top: 50%;
+    width: 80%;
+}
+
+#splashSpinner
+{
+    width: 10%;
+}
+
+.mainPageContent {
+    text-align: center;
+}
+
+/* Style for all buttons that are standalone in the app */
+
+.clickButton{
+    width: 85%;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    color: #EFEFEF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: #008BC0;
+    font-family: Helvetica;
+    padding: 2% 0 2% 0;
+    margin-top: 10px;
+    clear: both;
+}
+
+/* The navigation bar and the components inside it */
+
+.navBar{
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+    background-color: #D7D7D7;
+    color: #333;
+    position: fixed;
+    font-family: Helvetica;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5% 0 5% 0;
+    z-index: 2;
+}
+
+.navTitle{
+    width: 100%;
+    height: auto;
+    left: 0px;
+    margin: 0px auto;
+    position: absolute;
+    font-weight: bold;
+    z-index: -1;
+    padding-bottom: 1%;
+}
+
+.navBackButton{
+    display: inline-block;
+    float: left;
+    z-index: 4;
+    padding-left: 2%;
+    width: 25%;
+    text-align: left;
+}
+
+.navBackArrow{
+    float: left;
+    vertical-align: middle;
+}
+
+.navBackText{
+    padding-left: 15%;
+    color: #008BC0;
+}
+
+#bannerContainer
+{
+    margin-top: 20%;
+    width: 100%;
+}
+
+#mainScreenLogo{
+    width: 60%;
+}
+
+/* Content of the page should include this class */
+
+.pageContent{
+    margin-top: 60px;
+}
+
+/* Styling of the main screen */
+
+.optionsMainScreen{
+    width:100%;
+    padding-bottom:20px;
+}
+
+.mainScreenIcon
+{
+    width:20%;
+    margin: 0 4% 0 4%;
+}
+
+#settingsButtonMainScreen{
+    position:absolute;
+    right:5px;
+    top:5px;
+    width: 10%;
+}
+.settingsPage{
+    font-size: 2em;
+}
+
+.searchMainScreen{
+    display:inline-block;
+    width:100%;
+}
+#searchSpinner{
+    text-align: center;
+    width: 100%;
+
+}
+
+
+#searchFieldMainScreen{
+    width:80%;
+}
+
+#searchButtonMainScreen{
+    width:10%;
+}
+
+#hiddenSubmitButton{
+    display: none;
+}
+
+#advancedSearchMainScreen,#aboutMainScreen,#favouritesMainScreen{
+    /*width:30%;*/
+}
+
+.newsTitle{
+    color: #008BC0;
+    text-decoration: none;
+}
+
+.newsDate{
+    color: #666666;
+}
+
+.newsfeedContainer{
+    padding: 3%;
+}
+
+#searchFieldContainerMain
+{
+    position:relative;
+    border: 1px solid #AAA;
+    display: inline-block;
+    width:300px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 4px;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#searchButtonMain
+{
+    float:right;
+    width: 10%;
+}
+
+.spinnerContainer
+{
+    margin-top:50px;
+    text-align: center;
+}
+
+/* Styling of the search results screen */
+
+.searchResultsScreen{
+    display:inline-block;
+    width:100%;
+}
+
+#staticSearchBar{
+    margin-top: 5%;
+    background-color: #D7D7D7;
+    width: 100%;
+    z-index: 4;
+    border-bottom: 1px solid #9A9C9C;
+}
+
+#searchButtonResultsScreen{
+    width:10%;
+}
+#searchFieldResultsScreen{
+    width:80%;
+}
+
+.searchResultContainer
+{
+    display: block;
+    width:100%;
+    clear:both;
+    padding-bottom: 20px;
+    color: black;
+    overflow: hidden;
+}
+
+.searchThumbContainer
+{
+    width: 20%;
+}
+
+.searchResultThumb
+{
+    width:100%;
+    float: left;
+    margin-right: 10px;
+    padding-top: 20px;
+}
+
+.searchResultTitle
+{
+    min-height: 1em;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #CCC;
+
+}
+
+.searchResultMeta
+{
+    position: relative;
+    width: 70%;
+    margin-left: 20%;
+
+}
+.searchResultApplicantInfo{
+    float: left;
+    width: 70%
+}
+.searchResultApplicant{
+      width:100%;
+      height: 50%;
+    padding-top:0.25em;
+    padding-bottom: 0.25em;
+    font-size: 1.1em;
+}
+.searchResultApplicationNumber{
+    width:100%;
+    height: 50%;
+    padding-top:0.25em;
+    font-size: 1.1em;
+}
+
+.searchResultStatus{
+    float: right;
+    margin-right: 5%;
+    width: 20%;
+    font-size: 1.1em;
+}
+
+.searchResultFav
+{
+    float: right;
+    width: 10%;
+}
+
+.searchResultFavImg
+{
+    width: 100%;
+}
+
+.navigationResults {
+    padding: 10px;
+    width:100%;
+    background-color: #D7D7D7;
+}
+
+#searchMetaBar
+{
+    background-color: #D7D7D7;
+}
+
+#searchFieldContainer
+{
+    position:relative;
+    border: 1px solid #AAA;
+    display: inline-block;
+    width:300px;
+    height: 30px;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    border-radius: 4px;
+    background-color: white;
+
+}
+.errorMessage{
+    text-align: center;
+    font-size: 2em;
+    color: #008BC0;
+
+}
+.searchField
+{
+    position:relative;
+    float:left;
+    width: 88%;
+    height: 100%;
+    margin-left: 1%;
+    border: 0;
+    outline: none;
+    background: none;
+}
+
+#searchButton
+{
+    float:right;
+    width: 10%;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.searchTab
+{
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    background-color: #D7D7D7;
+    border-bottom: 1px solid #9A9C9C;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#searchAdvancedTab{
+    box-shadow: inset 1px 0 0 0 #9A9C9C;
+}
+
+
+.searchTabSelected
+{
+    background-color: #B7B7B7;
+    border-bottom:  1px solid #B7B7B7;
+    color: #EFEFEF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.searchTabExpander
+{
+    display: none;
+    background-color: #B7B7B7;
+    border-bottom: 1px solid #9A9C9C;
+    color: #EFEFEF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.floatRight
+{
+    float: right;
+}
+
+.textList
+{
+    width: 94%;
+    padding: 20px 0 20px 0;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.sortFieldTextLabel
+{
+    float: left;
+    width:  40%;
+}
+
+/* Styling of the settings page */
+
+#selectLanguageForm{
+    padding: 40px;
+}
+
+#selectLanguage{
+    float: left;
+    height: 100%;
+}
+
+#dropdownBoxLanguageSelect{
+    float: right;
+    height: 100%;
+}
+
+
+/* DETAILS ROWS */
+.detailRowContainer
+{
+
+    height: wrap-content;
+    width: 90%;
+    margin: 0 auto;
+    margin-top:30px;
+}
+
+.detailRowLeft
+{
+    float: left;
+    padding-right: 10px;
+    font-weight:bold;
+}
+
+.detailRowRight
+{
+    float: right;
+}
+
+#detailsExpander
+{
+    display: none;
+    margin-bottom: 20px;
+}
+
+#detailsReadMore
+{
+    text-align:center;
+    margin: 30px;
+    font-weight: bold;
+}
+
+.expandIcon
+{
+    height: 32px;
+    margin-right: 10px;
+    bottom:0px;
+}
+
+.detailHeadline
+{
+    font-size: 20px;
+    margin: 3%;
+    padding-top: 3%;
+    border-bottom: 1px solid #CCC;
+}
+
+.newsHeadline
+{
+    margin: 3%;
+    padding-top: 3%;
+    border-bottom: 1px solid #CCC;
+}
+
+.detailImageContainer
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.detailImage
+{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+#navBarRightImageContainer
+{
+    float: right;
+    width: 10%;
+    margin-right: 5px;
+}
+
+#navBarRightImage
+{
+    width:100%;
+}
+
+
+/* FURTHER ACTIONS CONTAINER AND OTHER SERVICES SEARCH RESULTS ON SEARCH SCREEN */
+
+#otherServicesSearchResults{
+    font-size: 1.5em;
+    padding: 5%;
+    width: 90%;
+}
+
+#furtherActionsContainer{
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+
+
+
+/* BOTTOM NAVIGATION BAR */
+.bottomNavigationBar{
+    text-align: center;
+    clear: both;
+}
+
+
+.bottomNavigationBar
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.whiteLink
+{
+    color: white;
+    text-decoration: none;
+}
+
+.blackLink
+{
+    color: black;
+    text-decoration: none;
+}
+
+/* INFORMATION SCREEN */
+
+#informationScreen{
+    font-size: 2em;
+}
+
+.buttonsInLine
+/* INFORMATION SCREEN */
+
+#informationScreen{
+    font-size: 2em;
+}
+
+#socialButtons
+{
+     text-align: center;
+     width:100%;
+     margin-top: 50px;
+}
+
+.socialImage
+     display: inline;
+}
+
+    width: 20%;
+    margin: 10px;
+}
+
+
+/* USEFUL INFORMATION SCREEN */
+
+
+.textInformationHeader{
+   font-size: 2em;
+   padding : 5% 5% 3% 3%;
+}
+
+.textInformationSubHeader{
+
+   font-size:  2em;
+   padding : 3% 3% 3% 3%;
+}
+
+.textInformation{
+   font-size: 1.5em;
+   padding : 0% 0% 3% 3%;
+}
+
+/* CONTACT INFORMATION SCREEN */
+.contactInfo
+{
+    font-family: Helvetica;
+    font-size: 1.3em;
+    padding-top: 20px;
+}
+
+
+.sortBySelector
+{
+    float: left;
+    width: 50%;
+    text-align: center;
+
+}
+
+.sortBySelectorSelected
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+

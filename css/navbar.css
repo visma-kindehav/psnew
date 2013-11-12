@@ -1,0 +1,44 @@
+.navBar{
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+    background-color: #D7D7D7;
+    color: #363939;
+    position: fixed;
+    font-family: Helvetica;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5% 0 5% 0;
+    z-index: 2;
+}
+
+.navTitle{
+    width: 100%;
+    height: auto;
+    left: 0px;
+    margin: 0px auto;
+    position: absolute;
+    font-weight: bold;
+    z-index: -1;
+    padding-bottom: 1%;
+}
+
+.navBackButton{
+    display: inline-block;
+    float: left;
+    z-index: 4;
+    padding-left: 2%;
+    width: 25%;
+    text-align: left;
+}
+
+.navBackArrow{
+    float: left;
+    vertical-align: middle;
+}
+
+.navBackText{
+    padding-left: 15%;
+    color: #008BC0;
+}

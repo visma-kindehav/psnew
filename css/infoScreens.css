@@ -1,0 +1,93 @@
+#socialButtons
+{
+     text-align: center;
+     width:100%;
+     margin-top:10px;
+}
+
+.socialImage{
+    float: left;
+    width: 20%;
+    margin: 10px;
+}
+
+#socialText
+{
+    margin-top:45px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.rightArrow
+{
+    height:22px;
+    float: right;
+    margin-top: 5px;
+}
+
+.leftArrow
+{
+    height:22px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
+.buttonWithArrow{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.buttonWithArrowText{
+    width: 80%;
+    float: left;
+    text-align: left;
+}
+
+.contactInfo
+{
+
+}
+
+.informationTextTitle{
+   font-size: 26px;
+}
+
+.informationTextSubTitle{
+   font-size: 21px;
+}
+
+.informationText{
+   font-size: 17px;
+}
+
+#aboutNipoImg{
+   width: 55%;
+   padding-bottom: 2%;
+   padding-left: 2%;
+   float:right;
+}
+
+.externalLink
+{
+    text-align: left;
+    color: #727474;
+    background: #EFEFEF;
+}
+
+#DevelopedByText
+{
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#developedByLogo
+{
+  width: 30%;
+  padding: 2% 2% 2% 2%;
+}
+
+

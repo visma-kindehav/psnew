@@ -1,0 +1,100 @@
+.navTitleText
+{
+    font-size: 26px;
+
+}
+
+.titleText
+{
+    font-size: 22px;
+}
+
+.subtitleText
+{
+   font-size: 20px;
+}
+
+.normalText
+{
+    font-size: 15px;
+}
+
+.italicText
+{
+    font-style: italic;
+}
+
+.metaText
+{
+    font-size: 14px;
+}
+
+
+.bold
+{
+    font-weight: bold;
+}
+
+
+
+.centerContent
+{
+    text-align: center;
+}
+
+.clear
+{
+    clear: both;
+}
+
+
+
+.clickButton{
+    width: 86%;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    color: #EFEFEF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: #9A9C9C;
+    font-family: Helvetica;
+    padding: 2% 2% 2% 2%;
+    margin-top: 20px;
+    clear: both;
+    font-size: 26px;
+}
+
+.textInformationContainer{
+   padding: 2% 2% 2% 2%;
+}
+
+.errorMessage{
+    text-align: center;
+    font-size: 1.5em;
+    color: #008BC0;
+
+}
+
+.whiteLink
+{
+    color: white;
+    text-decoration: none;
+}
+
+.blackLink
+{
+    color: black;
+    text-decoration: none;
+}
+
+.plainLink
+{
+    color: black;
+}
+
+.spacerTop
+{
+    padding-top: 30px;
+}

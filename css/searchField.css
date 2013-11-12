@@ -1,0 +1,38 @@
+.searchField
+{
+    position:relative;
+    float:left;
+    width: 88%;
+    height: 100%;
+    margin-left: 1%;
+    border: 0;
+    outline: none;
+    background: none;
+    font-size: 20px;
+}
+
+.searchFieldContainer
+{
+    position:relative;
+    border: 1px solid #AAA;
+    display: inline-block;
+    width:300px;
+    height: 30px;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    border-radius: 4px;
+    background-color: white;
+
+}
+
+.searchButton
+{
+    float:right;
+    width: 10%;
+    margin-right: 1%;
+	border: 0;
+}
+
+.hiddenSubmitButton{
+    display: none;
+}

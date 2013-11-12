@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/apps4norge.css" />
+
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
+
+        <script type="text/javascript" src="js/coffee/UrlBuilder.js"></script>
+        <script type="text/javascript" src="js/coffee/DataFieldBuilder.js"></script>
+
+        <script type="text/javascript" src="js/Flights/coffee/Flights/Flight.js"></script>
+        <script type="text/javascript" src="js/Flights/coffee/Flights/FlightFetchParamWrapper.js"></script>
+        <script type="text/javascript" src="js/Flights/coffee/Flights/FlightsWrapper.js"></script>
+        <script type="text/javascript" src="js/Flights/coffee/Flights/FlightFetcher.js"></script>
+        
+        <script type="text/javascript" src="js/Managers/coffee/Managers/ScreenManager.js"></script>
+        <script type="text/javascript" src="js/Managers/coffee/Managers/AirportManager.js"></script>
+        <script type="text/javascript" src="js/Managers/coffee/Managers/GeoLocationManager.js"></script>
+        <script type="text/javascript" src="js/Managers/coffee/Managers/TrainStationManager.js"></script>
+
+        
+        <script type="text/javascript" src="js/screens/coffee/screens/StartScreen.js"></script>
+        <script type="text/javascript" src="js/screens/coffee/screens/LoadingScreen.js"></script>
+        <script type="text/javascript" src="js/screens/coffee/screens/SettingsScreen.js"></script>
+        <script type="text/javascript" src="js/screens/coffee/screens/FlightTrainScreen.js"></script>
+        <script type="text/javascript" src="js/screens/coffee/screens/FlightTrainResultScreen.js"></script>
+        <script type="text/javascript" src="js/screens/coffee/screens/AboutScreen.js"></script>
+
+        <script type="text/javascript" src="js/Trains/coffee/Trains/Train.js"></script>
+        <script type="text/javascript" src="js/Trains/coffee/Trains/TrainFetcher.js"></script>
+        <script type="text/javascript" src="js/Trains/coffee/Trains/TrainsWrapper.js"></script>
+        <script type="text/javascript" src="js/Trains/coffee/Trains/TrainFetchParamWrapper.js"></script>
+
+
+        <title>Rekk Flyet</title>
+    </head>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            document.addEventListener("deviceready", deviceReady, false);
+            $('.link').bind('tap', function() {
+                console.log("TAPPPP!!!!")
+                var url = $(this).attr('rel');
+                loadURL(url);
+            });
+            function loadURL(url) {
+                if(navigator.userAgent.match(/Android/)) {
+                    console.log("IT'S ANDROID")
+                    navigator.app.loadUrl(url, {openExternal:true});
+                } else {
+                    console.log("IT'S NOT ANDROID")
+                    navigator.app.loadUrl(url);
+                }
+                return false;
+            }
+        });
+        function deviceReady() {
+            GeoLocationManager.getInstance().fetchLocation(true);
+            ScreenManager.changeScreen(new StartScreen());
+            ScreenManager.androidSpecific();
+        }
+    </script>
+    <body>
+        <div data-role="page" id="StartScreen">
+            <div data-role="header">
+                <a id="Start_Back" data-role="button" data-icon="delete" class="ui-btn-left">Avslutt</a>
+                <h3>Rekk Flyet</h3>
+            </div>
+            <div data-role="content">
+                <a id="Start_TrainAndFlight" data-role="button">Utfør Søk</a>
+                <a id="Start_Settings" data-role="button" style="display:none;">Innstillinger</a>
+                <a id="Start_About" data-role="button">Om Rekk Flyet</a>
+            </div>
+
+        </div>
+
+        <div data-role="page" id="FlightTrainScreen">
+            <div data-role="header">
+                <a id="FlightTrainScreen_Back" data-role="button" data-icon="back" class="ui-btn-left">Tilbake</a>
+                <h3>Velg Transport</h3>
+            </div>
+            <div data-role="content">
+
+                <div id="FlightTrainScreen_ErrorMessageWrapper">
+                    <p id="FlightTrainScreen_ErrorMessage"/>
+                </div>
+
+                <form data-role="fieldcontain" id="FlightTrainScreen_FlightSearchForm">
+                    <label>Flynummer: </label>
+                    <input type="search" id="FlightTrainScreen_FlightSearchInput" placeholder="Eksempel: SK2481"/>
+                </form>
+                <div id="FlightTrainScreen_FlightSearchContentWrapper">
+                    <ul data-role="listview" id="FlightTrainScreen_FlightSearchList" data-theme="d" data-inset="true" white-space="normal"></ul>
+                    <label id="FlightTrainScreen_FlightSearchNotification"></label>
+                </div>
+
+                <fieldset data-role="controlgroup"  data-role="fieldcontain" id="FlightTrainScreen_FlightBaggageGroup">
+                    <input type="radio" name="radio-choice-1" id="FlightTrainScreen_FlightBaggage_Noncheckin" value="choice-1" checked="checked"/>
+                    <label for="FlightTrainScreen_FlightBaggage_Noncheckin">Har kun håndbagasje</label>
+
+                    <input type="radio" name="radio-choice-1" id="FlightTrainScreen_FlightBaggage_Checkin" value="choice-2"  />
+                    <label for="FlightTrainScreen_FlightBaggage_Checkin">Har bagasje til innsjekking</label>
+                </fieldset>
+
+                <div data-role="fieldcontain" id="FlightTrainScreen_TrainStationWrapper">
+                    <label>Flytogstasjon: </label>
+                    <select id="FlightTrainScreen_TrainStationDropDown"></select>
+                    <a id="FlightTrainScreen_TrainStationAuto" data-role="button" data-icon="search">Finn nærmeste</a>
+                </div>
+
+                <div id="FlightTrainScreen_SearchButtonWrapper">
+                    <a class="ui-disabled" id="FlightTrainScreen_SearchButton" data-role="button" data-icon="search">Søk!</a>
+                </div>
+
+                <div class="buttonShouldBeAtBottom">
+                    <p class="transportationInformation">
+                        <a href="http://labs.ruter.no" class="link" rel="http://labs.ruter.no">Togdata fra Ruter</a> | <a href="http://www.avinor.no" class='link' rel="http://www.avinor.no">Flydata fra Avinor</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RESULTSCREEN START -->
+
+        <div data-role="page" id="FlightTrainResultScreen">
+
+            <div data-role="header">
+                <a id="FlightTrainResultScreen_Back" data-role="button" data-icon="back" class="ui-btn-left">Tilbake</a>
+                <h3>Resultat</h3>
+            </div>
+
+            <div data-role="content">
+
+                <div class="backgroundWrapper">
+                    <h3 class="FlightTrainResultScreen_Header">Din Flyavgang:</h3>
+
+                    <div id="FlightTrainResultScreen_FlightInfo"></div>
+                </div>
+
+                <div class="backgroundWrapper">
+                    <h3 id="FlightTrainResultScreen_ResultTrainHeader"></h3>
+
+                    <div id="FlightTrainResultScreen_TrainTableWrapper"></div>
+                </div>
+
+                <div class="buttonShouldBeAtBottom">
+                    <p class="transportationInformation">
+                        <a href="http://labs.ruter.no" class="link" rel="http://labs.ruter.no">Togdata fra Ruter</a> | <a href="http://www.avinor.no" class='link' rel="http://www.avinor.no">Flydata fra Avinor</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div data-role="page" id="SettingsScreen">
+            <div data-role="header">
+                <a id="SettingsScreen_Back" data-role="button" data-icon="back" class="ui-btn-left">Tilbake</a>
+                <h3>Innstillinger</h3>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+                    <div data-role="collapsible">
+                        <h3>Flyinnstillinger</h3>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Andre innstillinger</h3>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Noe totalt annerledes</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div data-role="page" id="AboutScreen">
+            <div data-role="header">
+                <h3>Rekk Flyet</h3>
+                <a id="AboutScreen_Back" data-role="button" data-icon="back" class="ui-btn-left">Tilbake</a>
+            </div>
+
+            <div data-role="content">
+                <div class="backgroundWrapper">
+                    <h2>Beskrivelse</h2>
+                    <p>Denne appen er et bidrag til <a href="#" class='link' rel="http://apps4norge.no/">Apps4Norge</a>-konkurransen. Den er utviklet i HTML5/JavaScript og bruker Cordova for å kommunisere med mobilens hardware.</p>
+
+                    <h2>Utviklerteam</h2>
+                    <ul>
+                        <li>Jon Freberg</li>
+                        <li>Kenneth Gunnerud</li>
+                        <li>Thomas Kåsene</li>
+                        <li>Alf Simen Sørensen</li>
+                    </ul>
+
+                    <h2>Datakilder</h2>
+                    <p>Data om fly er hentet fra Avinor. Se <a href="#" class='link' rel="http://www.avinor.no">Avinor</a> for mer informasjon.</p>
+                    <p>Data om tog er hentet fra Ruter sitt API. Se <a href="#" class='link' rel="http://labs.ruter.no">Ruter Labs</a> for mer informasjon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="LoadingScreen">
+            <div data-role="header">
+                <a id="Loading_Back" data-role="button" data-icon="back" class="ui-btn-left">Avbryt</a>
+                <h3>Laster...</h3>
+            </div>
+
+            <div data-role="content" id="loadingScreenContent">
+                <div id="loadingScreenWrapper">
+                    <h1>Rekk Flyet</h1>
+                    <img id="Loading_Img" src="img/loading.gif" alt="" />
+                    <p id="Loading_Message">Laster data...</p>
+                    <a id="Loading_Retry" data-role="button" data-icon="back" class="ui-btn-left">Prøv på nytt</a>
+                </div>
+                <div class="buttonShouldBeAtBottom">
+                    <p class="transportationInformation">
+                        <a href="http://labs.ruter.no" class="link" rel="http://labs.ruter.no">Togdata fra Ruter</a> | <a href="http://www.avinor.no" class='link' rel="http://www.avinor.no">Flydata fra Avinor</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>

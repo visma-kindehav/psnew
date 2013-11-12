@@ -1,0 +1,66 @@
+/* Main Screen CSS */
+
+#settingsButtonMainScreen
+{
+    position:absolute;
+    right:5px;
+    top:5px;
+    width: 10%;
+}
+
+#bannerContainer
+{
+    margin-top: 20%;
+    width: 100%;
+}
+
+#mainScreenLogo{
+    width: 75%;
+}
+
+
+#searchFieldContainerMain
+{
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.optionsMainScreen{
+    width:100%;
+    padding-bottom:20px;
+}
+
+.mainScreenIcon
+{
+    width:20%;
+    margin: 0 4% 0 4%;
+}
+
+/* NEWS */
+#newsHeadline
+{
+    margin: 3%;
+    padding-top: 3%;
+    border-bottom: 1px solid #CCC;
+}
+
+.newsfeedContainer{
+    padding: 3%;
+}
+
+.newsTitle{
+    color: #008BC0;
+    text-decoration: none;
+}
+
+.newsDate{
+    color: #666666;
+}
+
+.newsFeedSpinnerContainer
+{
+    margin-top:50px;
+    text-align: center;
+}

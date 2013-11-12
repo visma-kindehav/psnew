@@ -1,0 +1,13 @@
+#selectLanguageForm{
+    padding: 40px;
+}
+
+#selectLanguage{
+    float: left;
+    height: 100%;
+}
+
+#dropdownBoxLanguageSelect{
+    float: right;
+    height: 100%;
+}

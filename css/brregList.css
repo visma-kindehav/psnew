@@ -1,0 +1,31 @@
+.brregResultContainer
+{
+    display: block;
+    width:96%;
+    clear:both;
+    color: black;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+    padding-top: 20px;
+
+}
+
+.brregResultTitle
+{
+    min-height: 1em;
+    margin-bottom: 5px;
+}
+
+.brregOrgnr
+{
+    position: relative;
+    width: 100%;
+    float:left;
+
+}
+.brregCode
+{
+      width: 100%;
+      float: left;
+}

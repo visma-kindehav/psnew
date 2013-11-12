@@ -1,0 +1,113 @@
+#advancedSearchScreen
+{
+    font-family: Verdana;
+    color: #000;
+    background-color: #9A9C9C;
+}
+
+.advancedSearch
+{
+    width: 100%;
+}
+
+.advancedSearchAttributeLine
+{
+    width: 94%;
+    padding: 20px 0 20px 0;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.advancedSearchTextLabel
+{
+    float: left;
+    width:  40%;
+}
+.clearBoth{
+    clear: both;
+}
+.clearTop{
+
+}
+
+
+.inputFieldContainer
+{
+    border: 1px solid #AAA;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 2px;
+    background-color: white;
+    outline: none;
+}
+
+.advancedSearchFieldText
+{
+    width: 50%;
+    float: right;
+}
+
+.dropdownSearchFieldSelect
+{
+    float: right;
+    width: 50%;
+    border-radius: 4px;
+    border: 1px solid #AAA;
+}
+
+.advancedSearchFieldDateLable
+{
+    width: 100%;
+}
+
+.advancedSearchFieldDate
+{
+    width: 100%;
+}
+
+.fromDate
+{
+    width: 40%;
+    float: left;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.toDate
+{
+    width: 40%;
+    float: right;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.styleSelectedDropDown
+{
+    float: right;
+    width: 50%;
+    margin-top: 2px;
+    border: 1px solid #AAA;
+    border-radius: 4px;
+    background: url("../img/icons/arrow_down.png") no-repeat #fff;
+    background-position: 98% 0;
+    background-size: 10%;
+}
+
+
+#radioField1
+ {
+     padding: 5px 10px 5px 10px;
+     float: left;
+ }
+
+
+#radioField2
+ {
+     padding: 5px 10px 5px 10px;
+     float: right;
+ }
+
+.inline
+{
+    display: inline-block;
+}

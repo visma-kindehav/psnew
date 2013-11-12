@@ -1,0 +1,109 @@
+.searchTab
+{
+    float: left;
+    width: 50%;
+    color: #f9fafa;
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    background-color: #9a9c9c;
+    border-top: 1px solid #9a9c9c;
+    border-bottom: 1px solid #9a9c9c;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.searchTabDivider
+{
+    box-shadow: inset 1px 0 0 #ffffff;
+}
+
+.searchTabSelected
+{
+    background-color: #ffffff;
+    border-bottom:  1px solid #ffffff;
+    color: #686868;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.searchTabExpander
+{
+    display: none;
+    background-color: #ffffff;
+    border-bottom: 1px solid #9A9C9C;
+    color: #686868;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.textList
+{
+    width: 94%;
+    padding: 20px 0 20px 0;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.sortFieldTextLabel
+{
+    float: left;
+    width:  40%;
+}
+
+.sortBySelector
+{
+    float: left;
+    width: 50%;
+    text-align: center;
+
+}
+
+.sortBySelector:nth-child(2)
+{
+    box-shadow: inset 1px 0 0 #9A9C9C;
+}
+
+.sortBySelectorSelected
+{
+    font-weight: bold;
+    color: #008bc0;
+}
+
+.bottomNavigationBar{
+    text-align: center;
+    clear: both;
+    margin-top:20px;
+}
+#searchSpinner {
+    text-align: center;
+
+}
+
+#brregSearchResult{
+
+    min-height: 1em;
+    font-size: 90%;
+}
+
+#noridSearchResult{
+
+    min-height: 1em;
+    font-size: 90%;
+
+}
+
+#emptyTradeMarkResultButton{
+
+    min-height: 1em;
+    font-size: 90%;
+
+}
+
+#searchNumberOfHits {
+
+     padding-top: 1em;
+}
+
+.navigationArrow
+{
+    height: 15px;
+    display: inline-block;
+}

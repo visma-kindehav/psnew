@@ -1,0 +1,80 @@
+
+.searchResultContainer
+{
+    display: block;
+    width:100%;
+    clear:both;
+    padding-bottom: 20px;
+    color: black;
+    overflow: hidden;
+    border-bottom: 1px solid #CCC;
+    margin-top: 20px;
+}
+
+.searchThumbContainer
+{
+    width: 20%;
+    max-height: 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    float: left;
+    overflow: hidden;
+}
+
+.searchResultThumb
+{
+    width:95%;
+    margin-right: 5%;
+}
+
+.searchResultTitle
+{
+    margin-bottom: 5px;
+    clear: both;
+    height: 22px;
+    overflow: hidden;
+}
+
+.searchResultMeta
+{
+    position: relative;
+    width: 67%;
+    margin-left: 20%;
+
+}
+.searchResultApplicantInfo{
+    float: left;
+    width: 65%
+}
+.searchResultApplicant{
+    width:100%;
+    height: 50%;
+    padding-top:0.25em;
+    padding-bottom: 0.25em;
+
+}
+.searchResultApplicationNumber{
+    width:100%;
+    height: 50%;
+    padding-top:0.25em;
+
+}
+
+.searchResultStatus{
+    float: right;
+    margin-right: 5%;
+    width: 25%;
+    padding-right: 0.5em;
+}
+
+.searchResultFav
+{
+    float: right;
+    width: 10%;
+    margin-left: 3%;
+}
+
+.searchResultFavImg
+{
+    width: 100%;
+}
